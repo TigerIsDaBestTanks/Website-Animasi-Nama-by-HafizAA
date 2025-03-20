@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    margin: 50px;
+}
+
+h1 {
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Gaya dasar untuk setiap nama */
+.name {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+/* Hover effect untuk semua nama */
+.name:hover {
+    transform: rotate(10deg) scale(1.1);
+    text-shadow: 0 0 15px #ff0;
+    animation: bounce 0.5s infinite alternate;
+}
+
+/* Animasi unik untuk setiap nama saat diklik */
+@keyframes glitch { 0%, 100% { text-shadow: 2px 2px red, -2px -2px blue; } 50% { text-shadow: -2px -2px red, 2px 2px blue; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 75% { transform: translateX(-5px); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+@keyframes zoom { 0% { transform: scale(0.5); } 100% { transform: scale(1); } }
+@keyframes rotate360 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes flip { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+@keyframes fadeInOut { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes spin { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.2); } 100% { transform: rotate(360deg) scale(1); } }
+
+/* Efek untuk masing-masing nama */
+.name1.clicked { animation: glitch 0.5s infinite; }
+.name2.clicked { animation: shake 0.5s infinite; }
+.name3.clicked { animation: pulse 0.5s infinite; }
+.name4.clicked { animation: zoom 0.5s ease-in-out; }
+.name5.clicked { animation: rotate360 1s ease-in-out; }
+.name6.clicked { animation: flip 1s ease-in-out; }
+.name7.clicked { animation: fadeInOut 1s ease-in-out infinite; }
+.name8.clicked { animation: spin 1s ease-in-out; }
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 16px; /* Mengecilkan ukuran teks */
+        padding: 8px; /* Mengurangi padding */
+    }
+    h1 {
+        font-size: 24px; /* Mengecilkan ukuran heading */
+    }
+}
